@@ -341,12 +341,22 @@ export default function Portfolio() {
                   loading={'lazy'}
                 />
               </div>
-              <h3 className="mt-4 text-sm text-slate-900">
-                <a href={order.href}>
-                  <span className="absolute inset-0" />
-                  {order.productName}
-                </a>
-              </h3>
+              {i === 0 ? (
+                <h2 className="mt-4 text-sm text-slate-900">
+                  <a href={order.href}>
+                    <span className="absolute inset-0" />
+                    {order.productName}
+                  </a>
+                </h2>
+              ) : (
+                <h3 className="mt-4 text-sm text-slate-900">
+                  <a href={order.href}>
+                    <span className="absolute inset-0" />
+                    {order.productName}
+                  </a>
+                </h3>
+              )}
+
               <p className="mt-1 text-lg font-medium">
                 {order.status === 'delivered' ? (
                   <span className="text-gray-900">
